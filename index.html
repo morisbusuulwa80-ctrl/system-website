@@ -99,6 +99,83 @@
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- FINANCIAL DASHBOARD SECTION -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+            <!-- Total Expenses -->
+            <div class="bg-white rounded-lg shadow p-5 border-l-4 border-red-500">
+                <div class="flex justify-between items-center">
+                    <div>
+                        <p class="text-gray-500 text-sm uppercase font-bold">Total Expenses</p>
+                        <p class="text-2xl font-bold text-gray-800" id="dash-total-expenses">$0.00</p>
+                    </div>
+                    <div class="text-red-500 text-3xl"><i class="fas fa-file-invoice-dollar"></i></div>
+                </div>
+            </div>
+
+            <!-- Total Debtors -->
+            <div class="bg-white rounded-lg shadow p-5 border-l-4 border-indigo-500">
+                <div class="flex justify-between items-center">
+                    <div>
+                        <p class="text-gray-500 text-sm uppercase font-bold">Debtors (Demands)</p>
+                        <p class="text-2xl font-bold text-gray-800" id="dash-total-debtors">$0.00</p>
+                    </div>
+                    <div class="text-indigo-500 text-3xl"><i class="fas fa-user-clock"></i></div>
+                </div>
+            </div>
+
+            <!-- Net Profit -->
+            <div class="bg-white rounded-lg shadow p-5 border-l-4 border-teal-500" id="net-profit-card">
+                <div class="flex justify-between items-center">
+                    <div>
+                        <p class="text-gray-500 text-sm uppercase font-bold">Net Profit</p>
+                        <p class="text-2xl font-bold text-gray-800" id="dash-net-profit">$0.00</p>
+                    </div>
+                    <div class="text-teal-500 text-3xl"><i class="fas fa-wallet"></i></div>
+                </div>
+            </div>
+
+            <!-- Business Status -->
+            <div class="bg-white rounded-lg shadow p-5 border-l-4 border-gray-500" id="status-card">
+                <div class="flex justify-between items-center">
+                    <div>
+                        <p class="text-gray-500 text-sm uppercase font-bold">Business Status</p>
+                        <p class="text-xl font-bold text-gray-800" id="dash-status">Neutral</p>
+                    </div>
+                    <div class="text-gray-500 text-3xl" id="status-icon"><i class="fas fa-balance-scale"></i></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FINANCIAL INPUT SECTION -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8" id="financialInputSection">
+            <!-- Expenses -->
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <h2 class="text-xl font-bold mb-4 text-gray-700 border-b pb-2">Add Expenditure</h2>
+                <form id="expenseForm" class="mb-4">
+                    <div class="flex gap-2">
+                        <input id="expenseName" type="text" placeholder="Expense Name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                        <input id="expenseAmount" type="number" step="0.01" placeholder="Amount" class="shadow appearance-none border rounded w-32 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                        <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"><i class="fas fa-plus"></i></button>
+                    </div>
+                </form>
+                <ul id="expenseList" class="divide-y divide-gray-200 max-h-40 overflow-y-auto"></ul>
+            </div>
+
+            <!-- Debtors -->
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <h2 class="text-xl font-bold mb-4 text-gray-700 border-b pb-2">Add Debtor (People I Demand)</h2>
+                <form id="debtorForm" class="mb-4">
+                    <div class="flex gap-2">
+                        <input id="debtorName" type="text" placeholder="Debtor Name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                        <input id="debtorAmount" type="number" step="0.01" placeholder="Amount" class="shadow appearance-none border rounded w-32 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                        <button type="submit" class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"><i class="fas fa-plus"></i></button>
+                    </div>
+                </form>
+                <ul id="debtorList" class="divide-y divide-gray-200 max-h-40 overflow-y-auto"></ul>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
             
             <!-- INPUT FORM SECTION -->
             <div class="lg:col-span-1" id="inputSection">
@@ -384,4 +461,5 @@
     </script>
 </body>
 </html>
+
 
