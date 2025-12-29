@@ -608,6 +608,28 @@
         }
     </script>
 </body>
+    <script>
+  // Your specific config copied from your last image
+  const firebaseConfig = {
+    apiKey: "AIzaSyAyh4vmOp3sHxna8CRJiHbaVoNhqb5wsfM",
+    authDomain: "stocksystem-640d5.firebaseapp.com",
+    databaseURL: "https://stocksystem-640d5-default-rtdb.firebaseio.com",
+    projectId: "stocksystem-640d5",
+    storageBucket: "stocksystem-640d5.firebasestorage.app",
+    messagingSenderId: "38766394636",
+    appId: "1:38766394636:web:fcfcf882f37345a9049d29",
+    measurementId: "G-205JZ4LNDW"
+  };
+
+  // Initialize Firebase (Compat style to match your line 12 & 13)
+  firebase.initializeApp(firebaseConfig);
+  const database = firebase.database();
+
+  // TEST: This pulls your data (Eagle & club) into the console
+  database.ref('/').on('value', (snapshot) => {
+    console.log("Database connected! Data:", snapshot.val());
+  });
+</script>
 </html>
                     renderFinancials();
                     updateDashboard();
@@ -617,3 +639,4 @@
     </script>
 </body>
 </html>
+
